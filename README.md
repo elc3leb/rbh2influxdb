@@ -11,7 +11,9 @@ Link to a Grafana frontend, you can create a dashboard like that.
 
 ## Usage
 
-Call `rbh2influxdb.py` just after your robinhood run through a script like that : 
+Call `rbh2influxdb.py` just after your robinhood run through a script like that: 
+
+The script detects if it is a scan or a clean 
 
 ```
 ${PATH}/rbh2influxdb.py --log robinhood.log
