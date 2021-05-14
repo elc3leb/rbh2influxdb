@@ -9,3 +9,10 @@ Link to a Grafana frontend, you can create a dashboard like that.
 ![Screenshot](image.png)
 
 
+## Usage
+
+Call `rbh2influxdb.py` just after your robinhood run through a script like that : 
+
+```
+${PATH}/rbh2influxdb.py --log robinhood.log
+```
