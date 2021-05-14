@@ -7,11 +7,11 @@ import time
 import re
 from datetime import datetime , timedelta, date
 
-parser = argparse.ArgumentParser(description='Write / Read to / from influxdb SGBD')
+parser = argparse.ArgumentParser(description='Write Robinhood actions to influxdb SGBD')
 parser.add_argument('-H', '--host', type=str, help='Influxdb Server Address', required=False, default='influxdb_host')
 parser.add_argument('-P', '--port', type=int, help='Influxdb Server Port', required=False, default='<port>')
 parser.add_argument('-u', '--user', type=str, help='Influxdb User', required=False, default='robinhood')
-parser.add_argument('-p', '--password', type=str, help='Influxdb User Password', required=False, default='<passwor>')
+parser.add_argument('-p', '--password', type=str, help='Influxdb User Password', required=False, default='<password>')
 parser.add_argument('-d', '--dbname', type=str, help='Influxdb Database Name', required=False, default='robinhood')
 parser.add_argument('-l', '--log', type=str, help='Path to the log file', nargs='+', required=True)
 args = parser.parse_args()
@@ -172,10 +172,10 @@ for path in args.log:
                     "time": clean_end_date,
                     "fields": {
                       "start_date": clean_start_date,
-                                                 "actions": actions,
-                                                 "volumes": cleared_volumes,
-                                                 "duration": duration,
-                                                 "end_date": clean_end_date,
+                      "actions": actions,
+                      "volumes": cleared_volumes,
+                      "duration": duration,
+                      "end_date": clean_end_date,
                     }
                 }
             ]
