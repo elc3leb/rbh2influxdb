@@ -1,7 +1,7 @@
 #!/usr/bin/make
 
 container ?= robinhood
-filesystem ?= scratch
+filesystem ?= filesystem
 image ?= robinhood
 
 database_root_pass ?= ******
