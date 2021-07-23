@@ -60,14 +60,15 @@ def get_filecontent(arg_path):
         lines = file.read().splitlines()
     return lines
 
+#replace lustre_fs_* by your Lustre FS name 
 json_template = []
 for path in args.log:
     is_valid_log = True
-    if 'scratch' in path.split('/')[-1]:
+    if 'lustre_fs_1' in path.split('/')[-1]:
         fs_value= 'scratch'
-    if 'scratchrd' in path.split('/')[-1]:
+    if 'lustre_fs_2' in path.split('/')[-1]:
         fs_value= 'scratchrd'
-    if 'data_local' in path.split('/')[-1]:
+    if 'lustre_fs_3' in path.split('/')[-1]:
         fs_value= 'data_local'
     scan_end_date=""
     content = get_filecontent(path)
