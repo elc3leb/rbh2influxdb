@@ -54,7 +54,13 @@ run:
         @echo "Setting Lustre Parameter: [lru_max_age]=[$(lru_max_age_1)]"
         /usr/sbin/lctl set_param ldlm.namespaces.*.lru_max_age=$(lru_max_age_1)
         @echo "Running Container: [$(container)]"
-        docker run --detach --hostname $(container) --name $(container) --privileged --volume ${CURDIR}:/rbh --volume /$(filesystem):/$(filesystem) --volume /sys/fs/cgroup:/sys/fs/cgroup:ro $(image)
+        docker run --detach \
+                --hostname $(container) \
+                --name $(container) \
+                --privileged \
+                --volume ${CURDIR}:/rbh \
+                --volume /$(filesystem):/$(filesystem) \
+                --volume /sys/fs/cgroup:/sys/fs/cgroup:ro $(image)
 
 scan:
         @echo "Executing Robinhood Scan on Filesystem: [$(filesystem)]"
