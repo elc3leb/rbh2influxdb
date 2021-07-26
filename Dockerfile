@@ -50,7 +50,7 @@ RUN mkdir ${rbh_prefix}/etc && \
     mkdir ${rbh_prefix}/log/ && \
     ln -sf -t ${rbh_prefix}/ /rbh/
 
-RUN echo '<PASSWORD>' > ${rbh_prefix}/etc/robinhood.d/.dbpassword
+RUN echo '${DATABASE_ROOT_PASS}' > ${rbh_prefix}/etc/robinhood.d/.dbpassword
 
 ADD robinhood.sh /robinhood.sh
 ADD entrypoint.sh /entrypoint.sh
