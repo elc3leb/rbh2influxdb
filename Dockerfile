@@ -35,7 +35,9 @@ ADD robinhood-3.1.7.tar.gz ${rbh_prefix}/src
 COPY container.repo /etc/yum.repos.d/
 RUN sed -i 's/enabled=1/enabled=0/' /etc/yum.repos.d/ubi.repo
 
-RUN yum --assumeyes --nobest --nogpgcheck --quiet install @base autoconf automake bison flex glib2-devel jemalloc jemalloc-devel libattr-devel libtool mailx make mariadb-devel mariadb-server rpm-build wget which
+RUN yum --assumeyes --nobest --nogpgcheck --quiet install @base autoconf automake bison \
+     flex glib2-devel jemalloc jemalloc-devel libattr-devel libtool mailx make \
+     mariadb-devel mariadb-server rpm-build wget which
 
 RUN cd ${rbh_prefix}/src/robinhood-3.1.7 && \
    autoreconf --install && \
